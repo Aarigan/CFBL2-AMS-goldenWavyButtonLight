@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --clr-blk: #000;
+  --clr-bkg-clr: #cfa020;
+  --clr-txt: #f9e589;
+  --clr-txt1: #5c4003;
+  --clr-txt-sha: #ffcc00;
+  --clr-bord1: #fadc88;
+  --clr-bord2: #9c7625;
+  --cl-boxsha1: #fafac4;
+  --cl-boxsha2: #fdd832;
+  --cl-boxsha3: #f7b42f;  
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--clr-blk);
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  padding: .625em 1.25em;
+  color: var(--clr-txt);
+  text-decoration: none;
+  text-align: center;
+  vertical-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .125em;
+  border: none;
+  border-radius: .375em;
+  text-shadow: 0 .063em 0.125em var(--clr-blk);
+  border-top: .031em solid var(--clr-bord1);
+  border-left: .031em solid var(--clr-bord2);
+  border-right: .031em solid var(--clr-bord2);
+  border-bottom: .031em solid var(--clr-bord2);
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.2s ease;
+  cursor: pointer;   
+}
+
+button .waves {
+  position: absolute;
+  width: 100%;
+  /* height: 6.250em;
+  top: -3.75em; */
+  height: 200px;
+  top: -60px;
+  left: 0;
+  background-color: var(--clr-bkg-clr);
+  box-shadow: inset 0 0 3.125em rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  transition: .5s;
+}
+
+button .waves::after,
+button .waves::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%; 
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+button .waves::before {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: animate 5s linear infinite;
+}
+
+button .waves::after {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: animate 10s linear infinite;
+}
+
+button:hover .waves {
+  /* top: -7.188em; */
+  top: -115px;
+}
+
+button:hover {
+  color: var(--clr-txt1);
+  text-shadow: .063em .063em .188em var(--clr-txt-sha);
+  border: .5px solid var(--clr-bord1);
+  box-shadow: 0 0 .625em var(--cl-boxsha1),
+              0 0 2.5em var(--cl-boxsha2),
+              0 0 3.75em var(--cl-boxsha3);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
