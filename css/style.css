@@ -95,12 +95,16 @@ button .waves::after {
   animation: animate 10s linear infinite;
 }
 
-button:hover .waves {
+button:hover .waves,
+button:focus .waves,
+button:active .waves {
   /* top: -7.188em; */
   top: -115px;
 }
 
-button:hover {
+button:hover,
+button:focus,
+button:active {
   color: var(--clr-txt1);
   text-shadow: .063em .063em .188em var(--clr-txt-sha);
   border: .5px solid var(--clr-bord1);
